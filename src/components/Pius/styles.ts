@@ -35,3 +35,20 @@ export const ProfileContent = styled.p`
     font-family: 'Nunito';
     font-size: 12px;
 `;
+export const PiuLowerDiv = styled.div`
+    display: flex;
+    width: 972px;
+    height: 32px;
+    justify-content: space-between;
+    gap: 32px;
+    align-items: flex-start;
+`;
+export const PiuIcons = styled.img`
+    width: 24px;
+    height: 24px;
+`;
+export const PiuWholeHeart = styled.img`
+    width: 24px;
+    height: 24px;
+    background-image: '';
+`;
