@@ -8,6 +8,7 @@ export const Piu = styled.div`
     height: 190px;
     justify-content: space-between;
     background-color: #7b93ff;
+    border-radius: 16px;
 `;
 export const PiuTextDiv = styled.div`
     display: flex;
@@ -48,12 +49,14 @@ export const PiuLowerDiv = styled.div`
     width: 972px;
     height: 32px;
     justify-content: space-between;
-    gap: 32px;
     align-items: flex-start;
+    padding-left: 56px;
+    padding-right: 56px;
 `;
 export const PiuIcons = styled.img`
     width: 24px;
     height: 24px;
+    
 `;
 export const PiuWholeHeart = styled.img`
     width: 24px;
