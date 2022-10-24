@@ -6,12 +6,12 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 16px;
     width: 264px;
-
+    padding-left: 40px;
     height: 56px;
-    padding: 16px;
+
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
     background-color: ${(props) => (props.selected ? '#3856DC' : '#3E4347')};

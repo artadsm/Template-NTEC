@@ -14,56 +14,56 @@ const HomeTemplate = () => {
                 <S.SideBardiv>
                     <S.SideBarUpperDiv>
                         <S.SideBarIconDiv>
-                            <S.SideBarIcon src="public/assets/Logo.svg" />
+                            <S.SideBarIcon src="/assets/Logo.svg" />
                             <S.SideBarIconTitle>PiuPiwer</S.SideBarIconTitle>
                         </S.SideBarIconDiv>
                         <S.SideBarOptionsDiv>
                             <NavComponent
                                 link="/"
                                 title="Página Inicial"
-                                img="src\public\assets\Home.png"
+                                img="/assets/Home.png"
                                 setName={setName}
                                 selected={name === 'Página Inicial'}
                             />
                             <NavComponent
                                 link="/404"
                                 title="Notificações"
-                                img="/../public/assets/ic_outline-notifications.svg"
+                                img="/assets/ic_outline-notifications.svg"
                                 setName={setName}
                                 selected={name === 'Notificações'}
                             />
                             <NavComponent
                                 link="/404"
                                 title="Mensagens"
-                                img="/../public/assets/jam_messages-alt.svg"
+                                img="/assets/jam_messages-alt.svg"
                                 setName={setName}
                                 selected={name === 'Mensagens'}
                             />
                             <NavComponent
                                 link="/404"
                                 title="Salvos"
-                                img="../assets/Logo.svg"
+                                img="/assets/dashicons_cloud-saved.svg"
                                 setName={setName}
                                 selected={name === 'Salvos'}
                             />
                             <NavComponent
                                 link="/404"
                                 title="Perfil"
-                                img="/assets/Logo.svg"
+                                img="/assets/pajamas_profile.svg"
                                 setName={setName}
                                 selected={name === 'Perfil'}
                             />
                             <NavComponent
                                 link="/404"
                                 title="Configurações"
-                                img="/assets/Logo.svg"
+                                img="/assets/akar-icons_gear.svg"
                                 setName={setName}
                                 selected={name === 'Configurações'}
                             />
                         </S.SideBarOptionsDiv>
                     </S.SideBarUpperDiv>
                     <S.ProfileDiv>
-                        <S.ProfileImg src="\public\assets\quadrados 1.png" />
+                        <S.ProfileImg src="/assets/image 6.png" />
                         <S.ProfileName>Artur Anacleto</S.ProfileName>
                     </S.ProfileDiv>
                 </S.SideBardiv>
@@ -80,27 +80,27 @@ const HomeTemplate = () => {
                     </S.TrendingTopDiv>
                     <S.TrendingBottomDiv>
                         <TrendingComponent
-                            img=""
+                            img="/assets/image 8.png"
                             title="Eleições 2022"
                             content="Eleição em São Paulo: veja Tweets sobre a disputa de 2º turno entre Tarcísio e Haddad"
                         />
                         <TrendingComponent
-                            img=""
+                            img="/assets/image 10.png"
                             title="#AppleTeacher"
                             content="Na semana do Dia do Professor, agradecemos sua paixão e dedicação! "
                         />
                         <TrendingComponent
-                            img=""
+                            img="/assets/image 11.png"
                             title="A Fazenda"
                             content="'A Fazenda 14': Veja os Pius sobre o programa 🤠"
                         />
                         <TrendingComponent
-                            img="../../public/assets/volei.png"
+                            img="/assets/Frame 191.png"
                             title="Vôlei"
                             content="Sérvia derrota o Brasil e é campeã mundial de vôlei feminino"
                         />
                         <TrendingComponent
-                            img=""
+                            img="/assets/volei.png"
                             title="Clima tenso no NTec"
                             content="Gomes é apelidado de Campos e se  irrita com companheiros"
                         />

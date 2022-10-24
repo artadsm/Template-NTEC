@@ -9,6 +9,11 @@ export const ScreenDiv = styled.div`
     justify-content: space-between;
     background-color: #3e4347;
 `;
+export const Divide = styled.div`
+    width: 10px;
+    height: 100%;
+    background-color: #55596b;
+`;
 export const SideBardiv = styled.div`
     display: flex;
     height: 100vh;
@@ -17,6 +22,7 @@ export const SideBardiv = styled.div`
     justify-content: space-between;
     padding-top: 32px;
     padding-bottom: 32px;
+    border: 1px solid #55596b;
 `;
 export const SideBarUpperDiv = styled.div`
     display: flex;
@@ -88,6 +94,7 @@ export const FeedDiv = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 1px solid #55596b;
 `;
 
 export const TopFeedDiv = styled.div`
@@ -126,6 +133,14 @@ export const FeedInputDiv = styled.div`
     background-color: #9198b4;
     padding-left: 40px;
 `;
+export const FeedInput = styled.input`
+    width: 400px;
+    height: 100px;
+    font-family: 'Nunito';
+    color: #e1e7ff;
+    font-size: 18px;
+    font-weight: bold;
+`;
 
 export const BottomFeedDiv = styled.div`
     display: flex;
@@ -145,6 +160,7 @@ export const TrendingDiv = styled.div`
     align-items: center;
     justify-content: center;
     overflow-y: scroll;
+    border: 1px solid #55596b;
 `;
 export const TrendingTopDiv = styled.div`
     height: 118px;
@@ -154,9 +170,10 @@ export const TrendingTopDiv = styled.div`
     padding-left: 24px;
     align-items: flex-start;
     justify-content: flex-start;
+    border: 1px solid #55596b;
 `;
 export const TrendTitleText = styled.h1`
-    font-size: 36;
+    font-size: 36px;
     font-family: 'Nunito';
     font-weight: bold;
     color: #e1e7ff;

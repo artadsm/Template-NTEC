@@ -10,6 +10,8 @@ export const TrendingDiv = styled.div`
     padding-right: 14px;
     padding-top: 24px;
     padding-bottom: 24px;
+    gap: 16px;
+    border: 1px solid #55596b;
 `;
 export const TrendTextDiv = styled.div`
     display: flex;
@@ -28,4 +30,5 @@ export const TrendImg = styled.img`
     width: 156px;
     height: 156px;
     border-radius: 16px;
+    background-color: white;
 `;
