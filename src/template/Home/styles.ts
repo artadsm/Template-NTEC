@@ -95,6 +95,7 @@ export const FeedDiv = styled.div`
     align-items: center;
     justify-content: center;
     border: 1px solid #55596b;
+    overflow-y: scroll;
 `;
 
 export const TopFeedDiv = styled.div`
@@ -111,6 +112,7 @@ export const TopFeedDiv = styled.div`
 export const SearchBarDiv = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 32px;
     width: 1004px;
     height: 64px;
@@ -122,6 +124,17 @@ export const SearchBarDiv = styled.div`
 export const SerachBar = styled.input`
     width: 500px;
     height: 64px;
+    font-family: 'Nunito';
+    color: #e1e7ff;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #9198b4;
+    border: 0;
+    outline: 0;
+`;
+export const SerachBarIcon = styled.img`
+    width: 51px;
+    height: 51px;
 `;
 export const FeedInputDiv = styled.div`
     display: flex;
@@ -132,6 +145,8 @@ export const FeedInputDiv = styled.div`
     border-radius: 16px;
     background-color: #9198b4;
     padding-left: 40px;
+    padding-bottom: 24px;
+    padding-right: 32px;
 `;
 export const FeedInput = styled.input`
     width: 400px;
@@ -140,6 +155,32 @@ export const FeedInput = styled.input`
     color: #e1e7ff;
     font-size: 18px;
     font-weight: bold;
+    border: 0;
+    outline: 0;
+    background-color: #9198b4;
+`;
+export const FeedInputIconsDiv = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    width: 100%;
+    height: 24px;
+`;
+export const FeedInputIconsSendDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 42px;
+    width: 100%;
+    height: 24px;
+`;
+export const FeedIcons = styled.img`
+    width: 24px;
+    height: 24px;
+`;
+export const FeedSend = styled.img`
+    width: 24px;
+    height: 24px;
 `;
 
 export const BottomFeedDiv = styled.div`

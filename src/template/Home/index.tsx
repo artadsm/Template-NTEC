@@ -69,8 +69,29 @@ const HomeTemplate = () => {
                 </S.SideBardiv>
                 <S.FeedDiv>
                     <S.TopFeedDiv>
-                        <S.SearchBarDiv />
-                        <S.FeedInputDiv />
+                        <S.SearchBarDiv>
+                            <S.SerachBar
+                                placeholder="Quero ouvir um piu..."
+                                type="text"
+                            />
+                            <S.SerachBarIcon src="/assets/ci_search.svg" />
+                        </S.SearchBarDiv>
+                        <S.FeedInputDiv>
+                            <S.FeedInput
+                                placeholder="Quero dar um piu..."
+                                type="text"
+                            />
+                            <S.FeedInputIconsSendDiv>
+                                <S.FeedInputIconsDiv>
+                                    <S.FeedIcons src="/assets/Group.svg" />
+                                    <S.FeedIcons src="/assets/bi_camera-video-fill.svg" />
+                                    <S.FeedIcons src="/assets/heroicons_gif-solid.svg" />
+                                    <S.FeedIcons src="/assets/fluent_emoji-28-regular.svg" />
+                                    <S.FeedIcons src="/assets/fa6-solid_user-tag.svg" />
+                                </S.FeedInputIconsDiv>
+                                <S.FeedSend src="/assets/bi_send.svg" />
+                            </S.FeedInputIconsSendDiv>
+                        </S.FeedInputDiv>
                     </S.TopFeedDiv>
                     <S.BottomFeedDiv />
                 </S.FeedDiv>

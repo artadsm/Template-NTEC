@@ -17,10 +17,18 @@ export const PiuTextDiv = styled.div`
 `;
 export const PiuUpperDiv = styled.div`
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+`;
+export const PiuProfileDiv = styled.div`
+    display: flex;
     gap: 32px;
     align-items: flex-start;
 `;
-
+export const PiuDelete = styled.img`
+    width: 24px;
+    height: 24px;
+`;
 export const ProfilePic = styled.img`
     width: 64px;
     height: 64px;

@@ -18,11 +18,14 @@ const FeedComponent: React.FC<FeedComponentProps> = ({
     <>
         <S.Piu>
             <S.PiuUpperDiv>
-                <S.ProfilePic src={img} />
-                <S.PiuTextDiv>
-                    <S.ProfileName>{name}</S.ProfileName>
-                    <S.ProfileContent>{content}</S.ProfileContent>
-                </S.PiuTextDiv>
+                <S.PiuProfileDiv>
+                    <S.ProfilePic src={img} />
+                    <S.PiuTextDiv>
+                        <S.ProfileName>{name}</S.ProfileName>
+                        <S.ProfileContent>{content}</S.ProfileContent>
+                    </S.PiuTextDiv>
+                </S.PiuProfileDiv>
+                <S.PiuDelete src="/assets/bi_x-lg.svg" />
             </S.PiuUpperDiv>
             <S.PiuLowerDiv>
                 <S.PiuIcons src="" />
