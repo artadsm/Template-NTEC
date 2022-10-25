@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Dispatch, SetStateAction } from 'react';
 import NavComponent from 'components/NavComponent';
 import TrendingComponent from 'components/TrendingComponent';
 import FeedComponent from 'components/Pius';
@@ -8,43 +7,31 @@ import * as S from './styles';
 
 const HomeTemplate = () => {
     const [name, setName] = useState('Página Inicial');
-    const [count, setCount] = useState(0);
-     const [deleteToggle, setDelete] = useState(false);
-    // console.log(name);
-    // const[send,setSend] = useState(false);
+    const[counter,setCounter] = useState(0);
     const [valorInputContent,setValorInputContent] = useState("");
       
         interface InterfacePiu {
             name: string;
             content: string;
             img: string;
-            n : number;
-            setDelete: Dispatch<SetStateAction<boolean>>;
         }
         const[piusArray, setPiusArray] = useState<InterfacePiu[]>([{
             img : "/assets/image 6.png",
             name : "Artur Anacleto@artadsm",
             content: "me da o lolo lolo, cade o lolo lolo",
-            setDelete: setDelete,
-            n:0,
         }] );
-
         function handleClick() {
-            setCount(count + 1);
+            if(valorInputContent ==='') return;
+            if(valorInputContent.length > 140) return;
             setPiusArray([{
                 img: '/assets/image 6.png',
                 name: "Artur Anacleto@artadsm",
                 content: valorInputContent,
-                setDelete: setDelete,
-                n:count,
             } ,
             ...piusArray
         ]);
+        
     }
-        if(deleteToggle === true){
-            piusArray.splice(count,1);
-            setCount(count - 1);
-        }
     return (
         <>
             <S.ScreenDiv>
@@ -115,10 +102,14 @@ const HomeTemplate = () => {
                         </S.SearchBarDiv>
                         <S.FeedInputDiv>
                             <S.FeedInput
+                                selected={valorInputContent.length > 140 ? true : false}
                                 placeholder="Quero dar um piu..."
                                 type="text"
-                                value = {valorInputContent}
-                                onChange = {(e) => setValorInputContent(e.target.value)}
+                                value={valorInputContent}
+                                onChange={(e) => {
+                                    setValorInputContent(e.target.value);
+                                    setCounter(e.target.value.length);
+                                }}
                             />
                             <S.FeedInputIconsSendDiv>
                                 <S.FeedInputIconsDiv>
@@ -128,25 +119,26 @@ const HomeTemplate = () => {
                                     <S.FeedIcons src="/assets/fluent_emoji-28-regular.svg" />
                                     <S.FeedIcons src="/assets/fa6-solid_user-tag.svg" />
                                 </S.FeedInputIconsDiv>
-                                <S.FeedSend
-                                    onClick = {handleClick}
-                                    src="/assets/bi_send.svg" 
-                                />
+                                <S.FeedSendDiv>
+                                    <S.FeedChatacterCounter>
+                                        {counter}
+                                    </S.FeedChatacterCounter>
+                                    <S.FeedSend
+                                        onClick={handleClick}
+                                        src="/assets/bi_send.svg"
+                                    />
+                                </S.FeedSendDiv>
                             </S.FeedInputIconsSendDiv>
                         </S.FeedInputDiv>
                     </S.TopFeedDiv>
                     <S.BottomFeedDiv>
-                        {
-                            piusArray.map((piu) =>(
-                                <FeedComponent name = {piu.name} img = {piu.img} content ={piu.content} setDelete = {piu.setDelete}></FeedComponent>
-                            ))
-                        }
-                        <FeedComponent
-                            name="Artur Anacleto@artadsm"
-                            img="/assets/image 6.png"
-                            content="me da o lolo lolo, cade o lolo lolo"
-                            setDelete = {setDelete}
-                        />
+                        {piusArray.map((piu) => (
+                            <FeedComponent
+                                name={piu.name}
+                                img={piu.img}
+                                content={piu.content}
+                            ></FeedComponent>
+                        ))}
                     </S.BottomFeedDiv>
                 </S.FeedDiv>
                 <S.TrendingDiv>

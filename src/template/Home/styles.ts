@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-
+interface ContainerProps {
+    selected: boolean;
+}
 export const ScreenDiv = styled.div`
     display: flex;
     min-height: 100vh;
@@ -23,6 +25,7 @@ export const SideBardiv = styled.div`
     padding-top: 32px;
     padding-bottom: 32px;
     border: 1px solid #55596b;
+    position:sticky;
 `;
 export const SideBarUpperDiv = styled.div`
     display: flex;
@@ -93,7 +96,6 @@ export const FeedDiv = styled.div`
     width: 60%;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     border: 1px solid #55596b;
     overflow-y: scroll;
 `;
@@ -147,17 +149,18 @@ export const FeedInputDiv = styled.div`
     padding-left: 40px;
     padding-bottom: 24px;
     padding-right: 32px;
+    padding-top:32px;
 `;
-export const FeedInput = styled.input`
+export const FeedInput = styled.input<ContainerProps>`
     width: 400px;
-    height: 100px;
+    height: fit-content;
     font-family: 'Nunito';
     color: #e1e7ff;
     font-size: 18px;
     font-weight: bold;
     border: 0;
     outline: 0;
-    background-color: #9198b4;
+    background-color: ${(props) => (props.selected ? '#FF6868' : '#9198b4')};
 `;
 export const FeedInputIconsDiv = styled.div`
     display: flex;
@@ -177,6 +180,21 @@ export const FeedInputIconsSendDiv = styled.div`
 export const FeedIcons = styled.img`
     width: 24px;
     height: 24px;
+`;
+export const FeedSendDiv = styled.div`
+    display: flex;
+    width: fit-content;
+    height:fit-content;
+    align-items: center;
+    gap:32px;
+`;
+export const FeedChatacterCounter = styled.span`
+    font-family: "Nunito";
+    font-size:16px;
+    font-weight: bold;
+    color:#e1e7ff;
+    width:fit-content;
+    height:fit-content; 
 `;
 export const FeedSend = styled.img`
     width: 24px;

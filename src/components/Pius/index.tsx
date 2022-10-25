@@ -1,23 +1,22 @@
 import * as S from './styles';
 import { useState } from 'react';
-import { Dispatch, SetStateAction } from 'react';
 
 export type FeedComponentProps = {
     name: string;
     content: string;
     img: string;
-    setDelete: Dispatch<SetStateAction<boolean>>;
 };
 
 const FeedComponent: React.FC<FeedComponentProps> = ({
     content,
     img,
     name,
-    setDelete,
-
 }) => {
       const [likeToggle, setLike] = useState(false);
       const [repostToggle, setRepost] = useState(false);
+      const [deleteToggle, setDelete] = useState(false);
+
+
     function likeClick() {
         setLike(true);
     }
@@ -29,7 +28,7 @@ const FeedComponent: React.FC<FeedComponentProps> = ({
     }
 
     return (
-        <S.Piu>
+        <S.Piu deleted = {deleteToggle}>
             <S.PiuUpperDiv>
                 <S.PiuProfileDiv>
                     <S.ProfilePic src={img} />
@@ -38,7 +37,7 @@ const FeedComponent: React.FC<FeedComponentProps> = ({
                         <S.ProfileContent>{content}</S.ProfileContent>
                     </S.PiuTextDiv>
                 </S.PiuProfileDiv>
-                <S.PiuDelete src="/assets/bi_x-lg.svg"  onClick = {deleteClick}/>
+                <S.PiuDelete  src="/assets/bi_x-lg.svg"  onClick = {deleteClick}/>
             </S.PiuUpperDiv>
             <S.PiuLowerDiv>
                 <S.PiuIcons src="/assets/fa-regular_comment.svg" />
