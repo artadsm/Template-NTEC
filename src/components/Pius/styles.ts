@@ -1,21 +1,19 @@
 import styled from 'styled-components';
-interface ContainerProps {
-    deleted: boolean;
-}
-export const Piu = styled.div<ContainerProps>`
-    display: ${(props) => (props.deleted ? 'none' : 'flex')};
+
+export const Piu = styled.div`
+    display: flex;
     flex-direction: column;
     padding: 16px;
     width: 1004px;
     height: fit-content;
     justify-content: space-between;
-    gap:32px;
+    gap: 32px;
     background-color: #7b93ff;
     border-radius: 16px;
 `;
 export const PiuTextDiv = styled.div`
     display: flex;
-    width:100%;
+    width: 100%;
     height: fit-content;
     flex-direction: column;
     gap: 24px;
@@ -39,6 +37,7 @@ export const PiuProfileDiv = styled.div`
 export const PiuDelete = styled.img`
     width: 24px;
     height: 24px;
+    cursor: pointer;
 `;
 export const ProfilePic = styled.img`
     width: 64px;
@@ -53,7 +52,7 @@ export const ProfileName = styled.h1`
 export const ProfileContent = styled.p`
     font-family: 'Nunito';
     font-size: 16px;
-    width:600px;
+    width: 600px;
     overflow-wrap: break-word;
 `;
 export const PiuLowerDiv = styled.div`
@@ -68,7 +67,7 @@ export const PiuLowerDiv = styled.div`
 export const PiuIcons = styled.img`
     width: 24px;
     height: 24px;
-    
+    cursor: pointer;
 `;
 export const PiuWholeHeart = styled.img`
     width: 24px;

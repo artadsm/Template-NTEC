@@ -1,4 +1,18 @@
+/* eslint-disable*/
+
+import Piu from './Piu';
+import PiuLike from './PiuLike';
 export default interface User {
     id: string;
-    name: string;
+    username: string;
+    first_name: string;
+    last_name: string;
+    email: string;
+    about: string;
+    avatar: string;
+    pius: Piu[];
+    likes: PiuLike[];
+    following: User[];
+    followers: User[];
+    favorites: Piu[];
 }

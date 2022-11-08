@@ -1,34 +1,56 @@
+/* eslint-disable*/
+
 import * as S from './styles';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import PiusServices from 'services/PiusServices';
+import PiuLike from 'interfaces/PiuLike';
 
 export type FeedComponentProps = {
     name: string;
     content: string;
     img: string;
+    id: string;
+    likes: PiuLike[];
+    setPiuPostado: (x: boolean) => void;
+    piuPostado: boolean;
 };
 
 const FeedComponent: React.FC<FeedComponentProps> = ({
     content,
     img,
     name,
+    id,
+    setPiuPostado,
+    piuPostado,
+    likes
 }) => {
-      const [likeToggle, setLike] = useState(false);
-      const [repostToggle, setRepost] = useState(false);
-      const [deleteToggle, setDelete] = useState(false);
+    const [likeToggle, setLike] = useState(false);
+    const [repostToggle, setRepost] = useState(false);
+    useEffect(() => {
+        const sustainLikes = async () => {
+            const result = likes.find(
+                ({ userId }) =>
+                    userId === '3c0e589d-daa2-47d6-890b-3a24c136b423'
+            );
+            if (result) setLike(true);
+        };
+        sustainLikes();
+    }, []);
 
-
-    function likeClick() {
-        setLike(true);
+    async function likeClick() {
+        await PiusServices.likePiu(id);
+        setLike(!likeToggle);
     }
     function repostClick() {
-        setRepost(true);
+        setRepost(!repostToggle);
     }
-    function deleteClick(){
-        setDelete(true);
+    async function deleteClick() {
+        await PiusServices.deletePiu(id);
+        setPiuPostado(!piuPostado);
     }
 
     return (
-        <S.Piu deleted = {deleteToggle}>
+        <S.Piu>
             <S.PiuUpperDiv>
                 <S.PiuProfileDiv>
                     <S.ProfilePic src={img} />
@@ -37,7 +59,7 @@ const FeedComponent: React.FC<FeedComponentProps> = ({
                         <S.ProfileContent>{content}</S.ProfileContent>
                     </S.PiuTextDiv>
                 </S.PiuProfileDiv>
-                <S.PiuDelete  src="/assets/bi_x-lg.svg"  onClick = {deleteClick}/>
+                <S.PiuDelete src="/assets/bi_x-lg.svg" onClick={deleteClick} />
             </S.PiuUpperDiv>
             <S.PiuLowerDiv>
                 <S.PiuIcons src="/assets/fa-regular_comment.svg" />

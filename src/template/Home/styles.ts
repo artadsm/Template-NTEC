@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 interface ContainerProps {
     selected: boolean;
 }
@@ -7,7 +8,7 @@ export const ScreenDiv = styled.div`
     min-height: 100vh;
     width: 100vw;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     background-color: #3e4347;
 `;
@@ -25,7 +26,7 @@ export const SideBardiv = styled.div`
     padding-top: 32px;
     padding-bottom: 32px;
     border: 1px solid #55596b;
-    position:sticky;
+    position: sticky;
 `;
 export const SideBarUpperDiv = styled.div`
     display: flex;
@@ -92,7 +93,8 @@ export const SideBarText = styled.span`
 `;
 export const FeedDiv = styled.div`
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    height: fit-content;
     width: 60%;
     flex-direction: column;
     align-items: center;
@@ -149,7 +151,7 @@ export const FeedInputDiv = styled.div`
     padding-left: 40px;
     padding-bottom: 24px;
     padding-right: 32px;
-    padding-top:32px;
+    padding-top: 32px;
 `;
 export const FeedInput = styled.input<ContainerProps>`
     width: 400px;
@@ -184,17 +186,17 @@ export const FeedIcons = styled.img`
 export const FeedSendDiv = styled.div`
     display: flex;
     width: fit-content;
-    height:fit-content;
+    height: fit-content;
     align-items: center;
-    gap:32px;
+    gap: 32px;
 `;
 export const FeedChatacterCounter = styled.span`
-    font-family: "Nunito";
-    font-size:16px;
+    font-family: 'Nunito';
+    font-size: 16px;
     font-weight: bold;
-    color:#e1e7ff;
-    width:fit-content;
-    height:fit-content; 
+    color: #e1e7ff;
+    width: fit-content;
+    height: fit-content;
 `;
 export const FeedSend = styled.img`
     width: 24px;
@@ -203,7 +205,7 @@ export const FeedSend = styled.img`
 
 export const BottomFeedDiv = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 32px;
     padding-top: 32px;
     height: 100%;

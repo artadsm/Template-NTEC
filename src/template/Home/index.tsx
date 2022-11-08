@@ -2,35 +2,38 @@
 import NavComponent from 'components/NavComponent';
 import TrendingComponent from 'components/TrendingComponent';
 import FeedComponent from 'components/Pius';
-import { useState } from 'react';
+import PiusServices from 'services/PiusServices';
+import { useEffect, useState } from 'react';
+import Piu from 'interfaces/Piu';
 import * as S from './styles';
 
 const HomeTemplate = () => {
     const [name, setName] = useState('Página Inicial');
-    const[counter,setCounter] = useState(0);
-    const [valorInputContent,setValorInputContent] = useState("");
-      
-        interface InterfacePiu {
-            name: string;
-            content: string;
-            img: string;
-        }
-        const[piusArray, setPiusArray] = useState<InterfacePiu[]>([{
-            img : "/assets/image 6.png",
-            name : "Artur Anacleto@artadsm",
-            content: "me da o lolo lolo, cade o lolo lolo",
-        }] );
-        function handleClick() {
-            if(valorInputContent ==='') return;
-            if(valorInputContent.length > 140) return;
-            setPiusArray([{
-                img: '/assets/image 6.png',
-                name: "Artur Anacleto@artadsm",
-                content: valorInputContent,
-            } ,
-            ...piusArray
-        ]);
-        
+    const [counter, setCounter] = useState(0);
+    const [valorInputContent, setValorInputContent] = useState('');
+    const [piusArray, setPiusArray] = useState<Piu[]>([]);
+    const [piuPostado, setPiuPostado] = useState(false);
+
+    useEffect(() => {
+        const getPius = async () => {
+            const response = await PiusServices.getPius();
+            setPiusArray(
+                response.sort((a, b) =>
+                    new Date(a.created_at).getTime() >
+                    new Date(b.created_at).getTime()
+                        ? 1
+                        : -1
+                )
+            );
+        };
+        getPius();
+    }, [piuPostado]);
+
+    async function handleClick() {
+        if (valorInputContent === '') return;
+        if (valorInputContent.length > 140) return;
+        await PiusServices.postPiu(valorInputContent);
+        setPiuPostado(!piuPostado);
     }
     return (
         <>
@@ -102,7 +105,7 @@ const HomeTemplate = () => {
                         </S.SearchBarDiv>
                         <S.FeedInputDiv>
                             <S.FeedInput
-                                selected={valorInputContent.length > 140 ? true : false}
+                                selected={valorInputContent.length > 140}
                                 placeholder="Quero dar um piu..."
                                 type="text"
                                 value={valorInputContent}
@@ -134,10 +137,14 @@ const HomeTemplate = () => {
                     <S.BottomFeedDiv>
                         {piusArray.map((piu) => (
                             <FeedComponent
-                                name={piu.name}
-                                img={piu.img}
-                                content={piu.content}
-                            ></FeedComponent>
+                                id={piu.id}
+                                name={piu.user.username}
+                                img={piu.user.avatar}
+                                content={piu.text}
+                                setPiuPostado={setPiuPostado}
+                                piuPostado={piuPostado}
+                                likes={piu.likes}
+                            />
                         ))}
                     </S.BottomFeedDiv>
                 </S.FeedDiv>
