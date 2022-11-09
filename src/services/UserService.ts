@@ -27,4 +27,14 @@ export default class UserService {
 
         return response.data;
     }
+
+    static async getUsers(): Promise<User[]> {
+        const response = await api.get('/users');
+        return response.data;
+    }
+
+    static async getUser(id: string): Promise<User> {
+        const response = await api.get(`/users/${id}`);
+        return response.data;
+    }
 }

@@ -47,13 +47,28 @@ export const SideBarIconDiv = styled.div`
     gap: 8px;
 `;
 export const SideBarIcon = styled.img`
-    width: 56px;
-    height: 56px;
+    width: 22%;
+    height: 40px;
+    @media only screen and (min-width: 1225px) {
+        height: 56px;
+    }
 `;
 export const SideBarIconTitle = styled.span`
-    font-size: 36px;
+    font-size: 16px;
     font-family: 'Nunito';
     color: #7b93ff;
+    @media only screen and (min-width: 825px) {
+        font-size: 18px;
+    }
+    @media only screen and (min-width: 925px) {
+        font-size: 22px;
+    }
+    @media only screen and (min-width: 1125px) {
+        font-size: 24px;
+    }
+    @media only screen and (min-width: 1225px) {
+        font-size: 28px;
+    }
 `;
 export const SideBarOptionsDiv = styled.div`
     display: flex;
@@ -62,7 +77,7 @@ export const SideBarOptionsDiv = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding-right: 56px;
+    //  padding-right: 56px;
 `;
 
 export const ProfileDiv = styled.div`
@@ -75,15 +90,34 @@ export const ProfileDiv = styled.div`
     gap: 8px;
 `;
 export const ProfileImg = styled.img`
-    width: 64px;
-    height: 64px;
-    border-radius: 64px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    @media only screen and (min-width: 950px) {
+        width: 48px;
+        height: 48px;
+        border-radius: 48px;
+    }
+    @media only screen and (min-width: 1350px) {
+        width: 64px;
+        height: 64px;
+        border-radius: 64px;
+    }
 `;
 export const ProfileName = styled.span`
-    font-size: 16px;
+    font-size: 10px;
     color: #e1e7ff;
     font-weight: bold;
     font-family: 'Nunito';
+    @media only screen and (min-width: 950px) {
+        font-size: 12px;
+    }
+    @media only screen and (min-width: 1050px) {
+        font-size: 14px;
+    }
+    @media only screen and (min-width: 1250px) {
+        font-size: 16px;
+    }
 `;
 export const SideBarText = styled.span`
     font-size: 18px;
@@ -118,7 +152,7 @@ export const SearchBarDiv = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 32px;
-    width: 1004px;
+    width: 100%;
     height: 64px;
     background-color: #9198b4;
     border-radius: 16px;
@@ -137,15 +171,23 @@ export const SerachBar = styled.input`
     outline: 0;
 `;
 export const SerachBarIcon = styled.img`
-    width: 51px;
-    height: 51px;
+    width: 26px;
+    height: 26px;
+    @media only screen and (min-width: 950px) {
+        width: 32px;
+        height: 32px;
+    }
+    @media only screen and (min-width: 1150px) {
+        width: 51px;
+        height: 51px;
+    }
 `;
 export const FeedInputDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 140px;
-    width: 1004px;
+    width: 100%;
     border-radius: 16px;
     background-color: #9198b4;
     padding-left: 40px;
@@ -154,7 +196,7 @@ export const FeedInputDiv = styled.div`
     padding-top: 32px;
 `;
 export const FeedInput = styled.input<ContainerProps>`
-    width: 400px;
+    width: 100%;
     height: fit-content;
     font-family: 'Nunito';
     color: #e1e7ff;
@@ -167,9 +209,12 @@ export const FeedInput = styled.input<ContainerProps>`
 export const FeedInputIconsDiv = styled.div`
     display: flex;
     align-items: center;
-    gap: 42px;
+    gap: 30px;
     width: 100%;
     height: 24px;
+    @media only screen and (min-width: 1150px) {
+        gap: 42px;
+    }
 `;
 export const FeedInputIconsSendDiv = styled.div`
     display: flex;
@@ -178,10 +223,21 @@ export const FeedInputIconsSendDiv = styled.div`
     gap: 42px;
     width: 100%;
     height: 24px;
+    @media only screen and (min-width: 1150px) {
+        gap: 42px;
+    }
 `;
 export const FeedIcons = styled.img`
-    width: 24px;
-    height: 24px;
+    width: 12px;
+    height: 12px;
+    @media only screen and (min-width: 950px) {
+        width: 16px;
+        height: 16px;
+    }
+    @media only screen and (min-width: 1150px) {
+        width: 24px;
+        height: 24px;
+    }
 `;
 export const FeedSendDiv = styled.div`
     display: flex;
@@ -199,8 +255,16 @@ export const FeedChatacterCounter = styled.span`
     height: fit-content;
 `;
 export const FeedSend = styled.img`
-    width: 24px;
-    height: 24px;
+    width: 12px;
+    height: 12px;
+    @media only screen and (min-width: 950px) {
+        width: 16px;
+        height: 16px;
+    }
+    @media only screen and (min-width: 1150px) {
+        width: 24px;
+        height: 24px;
+    }
 `;
 
 export const BottomFeedDiv = styled.div`
@@ -232,12 +296,38 @@ export const TrendingTopDiv = styled.div`
     align-items: flex-start;
     justify-content: flex-start;
     border: 1px solid #55596b;
+    @media only screen and (min-width: 1150px) {
+        height: 118px;
+        width: 100%;
+        padding-top: 60px;
+        padding-bottom: 32px;
+        padding-left: 24px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        border: 1px solid #55596b;
+    }
+    @media only screen and (min-width: 1600px) {
+        height: 118px;
+        width: 100%;
+        padding-top: 40px;
+        padding-bottom: 32px;
+        padding-left: 24px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        border: 1px solid #55596b;
+    }
 `;
 export const TrendTitleText = styled.h1`
-    font-size: 36px;
+    font-size: 26px;
     font-family: 'Nunito';
     font-weight: bold;
     color: #e1e7ff;
+    @media only screen and (min-width: 1150px) {
+        font-size: 30px;
+    }
+    @media only screen and (min-width: 1600px) {
+        font-size: 36px;
+    }
 `;
 export const TrendingBottomDiv = styled.div`
     height: 100%;

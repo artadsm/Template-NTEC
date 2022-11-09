@@ -3,6 +3,7 @@ import NavComponent from 'components/NavComponent';
 import TrendingComponent from 'components/TrendingComponent';
 import FeedComponent from 'components/Pius';
 import PiusServices from 'services/PiusServices';
+// import UserService from 'services/UserService';
 import { useEffect, useState } from 'react';
 import Piu from 'interfaces/Piu';
 import * as S from './styles';
@@ -42,7 +43,7 @@ const HomeTemplate = () => {
                     <S.SideBarUpperDiv>
                         <S.SideBarIconDiv>
                             <S.SideBarIcon src="/assets/Logo.svg" />
-                            <S.SideBarIconTitle>PiuPiwer</S.SideBarIconTitle>
+                            <S.SideBarIconTitle>PiuPiuwer</S.SideBarIconTitle>
                         </S.SideBarIconDiv>
                         <S.SideBarOptionsDiv>
                             <NavComponent

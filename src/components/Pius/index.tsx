@@ -30,7 +30,7 @@ const FeedComponent: React.FC<FeedComponentProps> = ({
         const sustainLikes = async () => {
             const result = likes.find(
                 ({ userId }) =>
-                    userId === '3c0e589d-daa2-47d6-890b-3a24c136b423'
+                    userId === '8304908a-6f6d-4615-8c48-7fd47ea5b4cb'
             );
             if (result) setLike(true);
         };
